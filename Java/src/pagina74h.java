@@ -1,4 +1,6 @@
-
+//Ler  três  matrizes  (A,  B  e  C)  de  uma  dimensão  com  5  elementos  cada.  
+//Construir  uma  matriz  D, sendo  esta  a  junção  das  três  outras  matrizes.  
+//Desta  forma  D  deverá  ter  o  triplo  de  elementos,  ou seja, 15. Apresentar os elementos da matriz D. 
 
 import java.util.Scanner;
 
