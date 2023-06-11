@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Exercicio85 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        double[] temperatura = new double[365];
+        double menorTemperatura;
+        double maiorTemperatura;
+        double temperaturaMediaAnual = 0;
+        int diasMediaMenor = 0;
+        int indice;
+
+        System.out.println("Digite a temperatura de um dia:");
+        temperatura[0] = scanner.nextDouble();
+        menorTemperatura = temperatura[0];
+        maiorTemperatura = temperatura[0];
+        temperaturaMediaAnual += temperatura[0];
+
+        for (indice = 1; indice < 365; indice++) {
+            System.out.println("Digite a temperatura de um dia:");
+            temperatura[indice] = scanner.nextDouble();
+            temperaturaMediaAnual += temperatura[indice];
+
+            if (temperatura[indice] > maiorTemperatura) {
+                maiorTemperatura = temperatura[indice];
+            } else if (temperatura[indice] < menorTemperatura) {
+                menorTemperatura = temperatura[indice];
+            }
+        }
+
+        temperaturaMediaAnual /= 365;
+
+        for (indice = 0; indice < 365; indice++) {
+            if (temperatura[indice] < temperaturaMediaAnual) {
+                diasMediaMenor++;
+            }
+        }
+
+        System.out.println("A menor temperatura do ano foi de: " + menorTemperatura);
+        System.out.println("A maior temperatura do ano foi de: " + maiorTemperatura);
+        System.out.println("A temperatura média anual é: " + temperaturaMediaAnual);
+        System.out.println("O número de dias no ano em que a temperatura foi inferior à média anual é: " + diasMediaMenor);
+
+        scanner.close();
+    }
+}
